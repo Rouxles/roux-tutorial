@@ -1,0 +1,354 @@
+\documentclass[12pt,letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{footnote}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{soul}
+\usepackage[normalem]{ulem}
+\usepackage[export]{adjustbox}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\p}{\textquotesingle}
+\newcommand{\m}{\texttt}
+\newcommand{\ps}{\p\,\,}
+\newcommand{\version}{3.01}
+\newcommand{\comment}[1]{{\color{darkgray}\quad//#1}}
+
+
+\title{The FB+DR Guide}
+\author{Zhouheng Sun}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection*{The motivation}
+
+The key to Roux is F2B. The key to F2B is SB. And the key to SB is to know as much as possible during inspection and FB so you can know ahead and plan ahead. The key to that? Planning FB + DR in inspection. Once this is done properly, you’ll easily get your time down from the 10s range to the 7s range and beyond. 
+
+\subsection*{Who should learn this?}
+
+Anyone who can plan FB in inspection and is looking to plan more. More realistically, you probably want to be in the sub-12 range for this to be worth your while.
+
+
+
+\subsection*{What does this guide say?}
+
+One thing, and one thing only: 
+
+\ul{A systematic approach that will help you familiarize yourself with as many LP\footnote{FB Last Pair} + DR patterns as possible, and be able to come up with good-to-optimal solutions on the fly.}
+
+\vspace{12px}
+
+(For disclaimer, don't see this as a definitive guide -- I am simply writing about the approach I took, in the hope that it may inspire others who were confused about this like I once was. So use your own judgement, give it a careful read, and take what you need from it. )
+
+\section{The Learning Path}
+
+\begin{enumerate}
+    \item Prerequisite: learn to plan out FB under 15s most of the time.
+    \item Learn to solve the LP cases in different ways. 
+    \begin{itemize}
+        \item There is no need to go over the LP cases one by one, but a good heuristic would be that you should know \textgreater 2 solutions on average for a random case.
+    \end{itemize}
+    \item Learn the DR tier list (section~\ref{drtier}), so that you generally understand where to influence DR to.
+    \item Practice solving LP + DR cases optimally. In the beginning, be bold in exploring, use trainers to learn solutions, and don’t worry about move count or speed for now. 
+    \begin{itemize}
+        \item \href{https://onionhoney.github.io/roux-trainers/#fbdr}{Use the FBDR trainer: https://onionhoney.github.io/roux-trainers/\#fbdr}. There are also options to train for LP (step 2) only.
+    \end{itemize}
+    \item Go over the common techniques below, and make sure you’re incorporating most of them in your solves. If not, add them to your repertoire. This step can coincide with step 4, or afterwards if you are the adventurous type.
+    \item Practice, practice, practice. Ultimately this should be quite automatic: once you plan the FS\footnote{First Block square}, you should be half-tracking, half-recalling the LP + DR solution, simply because 
+    \begin{enumerate}
+        \item You can simply memorize all the easy patterns, and all you need to do then is to figure out how to reduce your case to them
+        \item There are only so many tricks you can use to influence DR (section~\ref{influencing}) as you will find out. They all look pretty similar.
+    \end{enumerate}
+\end{enumerate}
+
+\section{DR Tier List}\label{drtier}
+
+It is very important to be able to assess the placement of DR after FB is solved: having DR in a good place can greatly simplify your SS\footnote{Second Block Square} and boost your SB in general. A ``good'' DR not only takes fewer steps to solve, but also makes SS pair tracking / prediction easier, so that you can quickly figure out how influence the SS pair in speed-solves by inserting DR in different ways.
+
+\begin{itemize}
+    \item Good: oriented, takes 0-2 moves to solve (oriented, on U or R layer)
+    \item Okay: 3 movers (misoriented on M slice, or DF, DB)
+    \item Bad: misoriented, takes 4-5 moves to solve (RD, RF, RB, RU, LU)
+\end{itemize}
+    
+Again, the goal of FB+DR is not to miraculously solve FB and DR at the same time, but to try to construct an FB solution that will leave DR at a better position than if we only focused on FB.
+
+\section{Common Influencing Techniques}\label{influencing}
+
+The most important takeaway from this guide, if anything, is that FB+DR skills are all about the \textbf{quest for “good patterns”} --- sets of cases where you can easily influence DR during LP. If you understand these patterns, you'll be much more efficient. 
+
+% This will have some latex tables and stuff so it'll look better so stuff I put here is very rough and is probably not going to be finished until we have cases!
+
+% Terms:
+
+% \begin{itemize}
+%     \item FB slot: Assuming the bottom edge is solved first, this refers to one of the two vertical slots remaining.
+%     \item Top F/B insertion: You insert the made pair on U layer into its slot. For FB on left, it is F’ or B.
+%     \item Bottom F/B insertion: you insert the made pair on D layer into its slot. For FB on left, it is F or B’. 
+
+    
+% \end{itemize}
+
+\subsection{The List of Techniques I Use}
+
+\begin{itemize}
+    \item DR is already good: we usually preserve its ‘goodness’ or at least its orientation during LP
+    
+    \item DR in FB slot\footnote{assuming bottom edge is solved first, this refers to one of the two vertical slots remaining.} flipped: use bottom insertion\footnote{you insert the made pair on D layer into its slot. For FB on left, it is F or B’. } to orient it to U layer.
+    
+    \item DR in DF/DB: insert r2 , use F2/B2 insertion, or r F ( to DR flipped on U)
+
+    \item DR flipped on R: influence using B/F, or right before B/F top insertion\footnote{you insert the made pair on U layer into its slot. For FB on left, it is F’ or B.}
+    
+    \item DR flipped on U: influence using B/F, or right before B/F bottom insertion
+    
+    \item DR before FBLP: “nonlinear” solves
+    
+    \item The LP edge in DF/DB near its own slot: this makes tracking easy in general, and DR influencing is not too hard.
+    
+\end{itemize}   
+
+\subsection{Examples}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{Preserve good DR - Example 1}\\ 
+	\hline
+	Setup: \m{F2 U F\ps r2 F\ps U\ps R\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{r U2 }\comment { move DR to a safe place} \\
+		\m{R U r F\ps }\comment { insert pair and solve DR} \\
+		\bigskip{}
+		\footnotesize{{\color{darkgray}{Alt. Solution:\\\m{U2 R2 }\comment { solve DR first -- another way to ``preserve'' its niceness} \\
+		\m{U M2 F\ps}}}}	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/preserve-1}\end{flushright}
+	\end{minipage}\\
+	\hline
+	Avoid R2 U r2 F' because DR will be bad. \\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{Preserve good DR - Example 2}\\ 
+	\hline
+	Setup: \m{R F\ps M2 U\ps F\ps R2 U\ps F\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{r\ps }\comment { prelude -- make DR good first} \\
+		\m{U D R U R\ps D\ps }\comment { preserve} \\
+		\bigskip{}
+		\footnotesize{{\color{darkgray}{Alt. Solution:\\\m{F\ps R\ps U R\ps F }\comment { solve LP keeping DR stationary} \\
+		\m{}}}}	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/preserve-2}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{Preserve good DR - Example 3}\\ 
+	\hline
+	Setup: \m{R2 F\ps M U2 F2 U\ps F\ps U\ps F} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{F\ps }\comment { set up DR in LF} \\
+		\m{M\ps R\ps F }\comment { pair} \\
+	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.4]{img/flip-slot}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR in DF/DB - Example 1}\\ 
+	\hline
+	Setup: \m{D\ps F2 D F\ps U\ps R2 F\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{r F }\comment { influence DR while setting up LP} \\
+		\m{U\ps M\ps R\ps F\ps} \\
+		\bigskip{}
+		\footnotesize{{\color{darkgray}{Alt. Solution:\\\m{U\ps F\ps }\comment { setup keyhole} \\
+		\m{u\ps R u }\comment { DR will end up being good if you're familiar with this pattern}}}}	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/dfdb-1}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR in DF/DB - Example 2}\\ 
+	\hline
+	Setup: \m{R F\ps M2 R\ps U\ps R2 F\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{M\ps }\comment { prelude - setup DR} \\
+		\m{U R\ps U\ps }\comment { pair up} \\
+		\m{F2 }\comment { insert pair and make DR good} \\
+	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/dfdb-2}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR flipped on R - Example 1}\\ 
+	\hline
+	Setup: \m{D\ps F2 D F R2 U\ps F2 U2} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright\medskip{}
+		\m{r\ps U }\comment { setup DR and LP} \\
+		\m{F }\comment { make pair and orient DR} \\
+		\m{U\ps r\ps F }\comment { insert pair} \\
+		\bigskip{}
+		\footnotesize{{\color{darkgray}{Alt. Solution:\\\m{R\ps }\comment { move DR so it's flipped on U} \\
+		\m{F M2 U\ps }\comment { make pair (almost)} \\
+		\m{R\ps * F }\comment { insert} \\
+		\m{*: U2}}}}\bigskip{}\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/flip-r-1}\end{flushright}
+	\end{minipage}\\
+	\hline
+	Notice sol. 1 is an example of how we might influence DR *before* the pair is made.  \\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR flipped on R - Example 2}\\ 
+	\hline
+	Setup: \m{D R D2 F\ps D U R\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright\medskip{}
+		\m{R\ps U\ps R }\comment { make pair} \\
+		\m{U2 * F\ps }\comment { insert} \\
+		\m{*: R} \\
+		\bigskip{}
+		\footnotesize{{\color{darkgray}{Alt. Solution:\\\m{R\ps U\ps M }\comment { make pair} \\
+		\m{r\ps * F }\comment { insert} \\
+		\m{*: U}}}}\bigskip{}\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/flip-r-2}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR flipped on U - Example 1}\\ 
+	\hline
+	Setup: \m{F\ps M\ps F\ps R F\ps U\ps F\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{R U\ps R }\comment { set up pair} \\
+		\m{r2 * F }\comment { bottom ins.} \\
+		\m{*: U\ps to orient DR} \\
+	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/flip-u-1}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR flipped on U - Example 2}\\ 
+	\hline
+	Setup: \m{R D R\ps D\ps F\ps R\ps F\ps U\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{F R2 }\comment { set up pair} \\
+		\m{* F }\comment { bottom ins.} \\
+		\m{*: U to orient DR} \\
+	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/flip-u-2}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\centerline{\begin{tabular}{|p{0.91\textwidth}|}
+	\hline
+	\textbf{DR before FBLP - Example}\\ 
+	\hline
+	Setup: \m{F M U\ps r2 U2 F2 U\ps F\ps} \\
+	\hline
+	\begin{minipage}[l]{0.65\textwidth}
+		\raggedright
+		\m{F U\ps R2 }\comment { solve DR} \\
+		\m{U M\ps F\ps }\comment { LP} \\
+	\end{minipage}
+	\begin{minipage}[c]{0.25\textwidth}
+		\begin{flushright}\includesvg[scale=0.6]{img/dr-first}\end{flushright}
+	\end{minipage}\\
+	\hline
+\end{tabular}}\bigskip{}
+
+\subsection{How to identify the patterns and apply the technique}
+First, track where DR goes when FS is solved, and look up your DR placement in the list. Determine if your LP is amenable to that DR influencing technique. 
+
+How do you determine this? Well, the idea is you want to influence DR in a way that falls in line with the LP solution. That is, it should NOT make LP more difficult to solve! If this is the case,  cibfeats! You have found the \textbf{GOOD PATTERN} --- lucky situations where you can solve LP and influence DR at the same time. Now go ahead and apply the technique. Otherwise, try again --- find another LP solution, or maybe stick to the same solution but try to influence DR at a later time. 
+
+In fact, many easy influencing patterns come up only after LP is paired up or easy enough, so in the case of a more difficult LP, you might need to further track DR into the first few LP moves, until you see a good influencing opportunity come up.
+
+
+\subsection{Remarks}
+It's worth noting that I personally don't track LP + DR at the same time --- I’d usually just aim for an easy LP when I plan FS, and only after tracking LP and deciding it is easy will I start tracking DR. This is because 1) there is not enough time to track LP + DR for every FS. 2) Easy LP generally leads to easy LP+DR, so it's usually good enough.
+
+There are lots of other patterns not listed above. Don't stop here! Feel free to go ahead and discover your own --- for  a reader’s exercise, what initial DR positions will end up especially good after the edge keyhole insert (u\ps R u)? Try to figure out these more subtle patterns and applying them in real solves is super fun and useful. As such, you're welcome (and should) come up with your own curated list of good patterns. That said, I believe the patterns I listed are definitely on the better side and will probably overlap a lot with your own findings despite all the subjectivity, so they are definitely worth going over.
+
+\section{Suggestions}
+
+\paragraph{Don’t force yourself to influence DR}
+
+You should see FB + DR as a ``means to an end'': The end goal is to give yourself enough time (i.e. during execution of FB+DR) to inspect all the rest of SB, so don’t go too far optimizing every single LP + DR case, or forcing DR to always be in a 0/1 mover away from solved.
+Actually, there are going to be cases where doing no influencing at all is the best, so it’s really a trade off between the extra moves you put in during FB and the gain from getting a better DR position. (However, do try to avoid the bad DR positions in the tier list, especially the 5 movers. At 7.2 global, my current belief is that these are nasty, and you should avoid them unless the FB solution is outstandingly good.)
+
+\paragraph{Strong FB+DR skills should be accompanied by strong SS skills.} 
+
+Be especially good at building SS when DR is in a good position (but not solved yet). That is, you should learn to influence the SS pair when inserting DR. Ultimately, you should be so efficient and familiar with the SS cases that any case is executed like a single algorithm. Only then can the power of FB+DR be fully unleashed --- but that’s for another guide. 
+
+\newpage\section{Other Resources}
+
+\href{https://www.youtube.com/user/P3NGU1N5D0NTFLY/videos}{Kian Mansour's YouTube Channel} is a great resource for example solves. You will definitely be able to learn a lot from his videos as long as you take the time to understand them.
+
+\href{https://www.youtube.com/user/franktangtartharakul}{Kavin Tangtartharakul's YouTube Channel} is another great resource for learning more about F2B.
+
+As mentioned earlier, \href{https://onionhoney.github.io/roux-trainers/#fbdr}{The FBDR trainer} is a good resource for learning more about human-understandable solutions.
+
+\end{document}
