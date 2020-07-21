@@ -49,7 +49,7 @@ Anyone who can plan FB in inspection and is looking to plan more. More realistic
 
 \subsection*{What does this guide say?}
 
-One thing, and one thing only: 
+One thing, and one thing only:
 
 \ul{A systematic approach that will help you familiarize yourself with as many LP\footnote{FB Last Pair} + DR patterns as possible, and be able to come up with good-to-optimal solutions on the fly.}
 
@@ -61,16 +61,18 @@ One thing, and one thing only:
 
 \begin{enumerate}
     \item Prerequisite: learn to plan out FB under 15s most of the time.
-    \item Learn to solve the LP cases in different ways. 
+    \item Learn to solve the LP cases in different ways.
     \begin{itemize}
         \item There is no need to go over the LP cases one by one, but a good heuristic would be that you should know \textgreater 2 solutions on average for a random case.
+        \item These alternative solutions can be slightly worse than your most preferred ones as long as they can influence DR in unique ways. 
     \end{itemize}
     \item Learn the DR tier list (section~\ref{drtier}), so that you generally understand where to influence DR to.
-    \item Practice solving LP + DR cases optimally. In the beginning, be bold in exploring, use trainers to learn solutions, and don’t worry about move count or speed for now. 
+    \item Practice solving LP + DR cases "optimally" -- keep trying until you find a solution that's both finger-tricky and not too long. 
     \begin{itemize}
-        \item \href{https://onionhoney.github.io/roux-trainers/#fbdr}{Use the FBDR trainer: https://onionhoney.github.io/roux-trainers/\#fbdr}. There are also options to train for LP (step 2) only.
+    \item In the beginning, be bold in exploring all sorts of solutions to expand your mindset. This is because LP+DR is way more flexible than LP alone! 
+        \item On top of that, I'd highly recommend using trainers to help you learn solutions --- I guarantee you it will be a beautiful enlightening experience. \href{https://onionhoney.github.io/roux-trainers/#fbdr}{Use the FBDR trainer: https://onionhoney.github.io/roux-trainers/\#fbdr}. There are also options to train for LP (step 2) only.
     \end{itemize}
-    \item Go over the common techniques below, and make sure you’re incorporating most of them in your solves. If not, add them to your repertoire. This step can coincide with step 4, or afterwards if you are the adventurous type.
+    \item Go over the common techniques below (section 4), and make sure you’re incorporating most of them in your solves. If not, add them to your repertoire. This step can coincide with step 4, or afterwards if you are the adventurous type.
     \item Practice, practice, practice. Ultimately this should be quite automatic: once you plan the FS\footnote{First Block square}, you should be half-tracking, half-recalling the LP + DR solution, simply because 
     \begin{enumerate}
         \item You can simply memorize all the easy patterns, and all you need to do then is to figure out how to reduce your case to them
@@ -87,49 +89,39 @@ It is very important to be able to assess the placement of DR after FB is solved
     \item Okay: 3 movers (misoriented on M slice, or DF, DB)
     \item Bad: misoriented, takes 4-5 moves to solve (RD, RF, RB, RU, LU)
 \end{itemize}
-    
+
 Again, the goal of FB+DR is not to miraculously solve FB and DR at the same time, but to try to construct an FB solution that will leave DR at a better position than if we only focused on FB.
 
 \section{Common Influencing Techniques}\label{influencing}
 
 The most important takeaway from this guide, if anything, is that FB+DR skills are all about the \textbf{quest for “good patterns”} --- sets of cases where you can easily influence DR during LP. If you understand these patterns, you'll be much more efficient. 
 
-% This will have some latex tables and stuff so it'll look better so stuff I put here is very rough and is probably not going to be finished until we have cases!
 
-% Terms:
-
-% \begin{itemize}
-%     \item FB slot: Assuming the bottom edge is solved first, this refers to one of the two vertical slots remaining.
-%     \item Top F/B insertion: You insert the made pair on U layer into its slot. For FB on left, it is F’ or B.
-%     \item Bottom F/B insertion: you insert the made pair on D layer into its slot. For FB on left, it is F or B’. 
-
-    
-% \end{itemize}
 
 \subsection{The List of Techniques I Use}
 
 \begin{itemize}
     \item DR is already good: we usually preserve its ‘goodness’ or at least its orientation during LP
-    
+
     \item DR in FB slot\footnote{assuming bottom edge is solved first, this refers to one of the two vertical slots remaining.} flipped: use bottom insertion\footnote{you insert the made pair on D layer into its slot. For FB on left, it is F or B’. } to orient it to U layer.
-    
+
     \item DR in DF/DB: insert r2 , use F2/B2 insertion, or r F ( to DR flipped on U)
 
     \item DR flipped on R: influence using B/F, or right before B/F top insertion\footnote{you insert the made pair on U layer into its slot. For FB on left, it is F’ or B.}
-    
+
     \item DR flipped on U: influence using B/F, or right before B/F bottom insertion
-    
+
     \item DR before FBLP: “nonlinear” solves
-    
+
     \item The LP edge in DF/DB near its own slot: this makes tracking easy in general, and DR influencing is not too hard.
-    
-\end{itemize}   
+
+\end{itemize}
 
 \subsection{Examples}
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{Preserve good DR - Example 1}\\ 
+	\textbf{Preserve good DR - Example 1}\\
 	\hline
 	Setup: \m{F2 U F\ps r2 F\ps U\ps R\ps U\ps} \\
 	\hline
@@ -169,7 +161,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{Preserve good DR - Example 3}\\ 
+	\textbf{DR in FB slot flipped - Example 1 }\\ 
 	\hline
 	Setup: \m{R2 F\ps M U2 F2 U\ps F\ps U\ps F} \\
 	\hline
@@ -182,11 +174,13 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 		\begin{flushright}\includesvg[scale=0.4]{img/flip-slot}\end{flushright}
 	\end{minipage}\\
 	\hline
-\end{tabular}}\bigskip{}
+	Here we see a good DR, but instead of preserving its EO, we deliberately store it in the FB slot and and flip it. As long as we see an easy bottom insertion, flipped in slot is very much a sweet spot for DR. \\
+	\hline
+\end{tabular}}
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR in DF/DB - Example 1}\\ 
+	\textbf{DR in DF/DB - Example 1}\\
 	\hline
 	Setup: \m{D\ps F2 D F\ps U\ps R2 F\ps U\ps} \\
 	\hline
@@ -205,7 +199,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR in DF/DB - Example 2}\\ 
+	\textbf{DR in DF/DB - Example 2}\\
 	\hline
 	Setup: \m{R F\ps M2 R\ps U\ps R2 F\ps U\ps} \\
 	\hline
@@ -223,7 +217,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR flipped on R - Example 1}\\ 
+	\textbf{DR flipped on R - Example 1}\\
 	\hline
 	Setup: \m{D\ps F2 D F R2 U\ps F2 U2} \\
 	\hline
@@ -247,7 +241,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR flipped on R - Example 2}\\ 
+	\textbf{DR flipped on R - Example 2}\\
 	\hline
 	Setup: \m{D R D2 F\ps D U R\ps U\ps} \\
 	\hline
@@ -268,7 +262,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR flipped on U - Example 1}\\ 
+	\textbf{DR flipped on U - Example 1}\\
 	\hline
 	Setup: \m{F\ps M\ps F\ps R F\ps U\ps F\ps U\ps} \\
 	\hline
@@ -286,7 +280,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR flipped on U - Example 2}\\ 
+	\textbf{DR flipped on U - Example 2}\\
 	\hline
 	Setup: \m{R D R\ps D\ps F\ps R\ps F\ps U\ps} \\
 	\hline
@@ -304,7 +298,7 @@ The most important takeaway from this guide, if anything, is that FB+DR skills a
 
 \centerline{\begin{tabular}{|p{0.91\textwidth}|}
 	\hline
-	\textbf{DR before FBLP - Example}\\ 
+	\textbf{DR before FBLP - Example}\\
 	\hline
 	Setup: \m{F M U\ps r2 U2 F2 U\ps F\ps} \\
 	\hline
@@ -339,7 +333,7 @@ There are lots of other patterns not listed above. Don't stop here! Feel free to
 You should see FB + DR as a ``means to an end'': The end goal is to give yourself enough time (i.e. during execution of FB+DR) to inspect all the rest of SB, so don’t go too far optimizing every single LP + DR case, or forcing DR to always be in a 0/1 mover away from solved.
 Actually, there are going to be cases where doing no influencing at all is the best, so it’s really a trade off between the extra moves you put in during FB and the gain from getting a better DR position. (However, do try to avoid the bad DR positions in the tier list, especially the 5 movers. At 7.2 global, my current belief is that these are nasty, and you should avoid them unless the FB solution is outstandingly good.)
 
-\paragraph{Strong FB+DR skills should be accompanied by strong SS skills.} 
+\paragraph{Strong FB+DR skills should be accompanied by strong SS skills.}
 
 Be especially good at building SS when DR is in a good position (but not solved yet). That is, you should learn to influence the SS pair when inserting DR. Ultimately, you should be so efficient and familiar with the SS cases that any case is executed like a single algorithm. Only then can the power of FB+DR be fully unleashed --- but that’s for another guide. 
 
